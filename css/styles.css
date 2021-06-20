@@ -345,15 +345,15 @@ img {
 }
 
 .icons-list {
+  display: flex;
   margin: 0 auto;
   padding: 16px 32px 30px;
-  display: flex;
   justify-content: center;
 }
-.icons-list a:not(:last-child) {
+.icons-list li:not(:last-child) {
   margin-right: 10px;
 }
-.icons-list a {
+.icons-list li {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -361,14 +361,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.icons-list a {
-  color: var(--icons-color);
-  background-color: var(--white-color);
-}
-
-.icons-list a:hover {
+.icons-list li:hover,
+.icons-list li:focus {
   background-color: var(--accent-color);
 }
 .icon {
@@ -380,59 +377,48 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  fill: currentColor;
+  fill: var(--icons-color);
 }
 
-.icon:hover {
+.icons-list li:hover .icon,
+.icons-list li:focus .icon {
   fill: var(--white-color);
   background-color: var(--accent-color);
 }
 
 /* Постоянные клиенты */
 .client {
-  margin: 0;
-  padding: 0px;
   display: flex;
-  justify-content: center;
 }
 
 .client li {
   width: 170px;
   height: 92px;
   border: 1px solid var(--icons-color);
-
   border-radius: 4px;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .client li:not(:last-child) {
   margin-right: 30px;
 }
-.client li:hover {
-  border-color: var(--accent-color);
-}
-
-.client a {
-  color: var(--icons-color);
-}
-.client a:hover {
-  color: var(--accent-color);
+.client li:hover,
+.client li:focus {
+  border: 1px solid var(--accent-color);
 }
 
 .client-icon {
   width: 106px;
   height: 60px;
-  padding: 0;
-  margin: 0;
+  fill: var(--icons-color);
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  fill: currentColor;
+.client li:hover .client-icon,
+.client li:focus .client-icon {
+  fill: var(--accent-color);
 }
 
 /* Стилизация футера */
@@ -514,7 +500,7 @@ img {
 .icons-list-footer li:not(:last-child) {
   margin-right: 10px;
 }
-.icons-list-footer a {
+.icons-list-footer li {
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -522,14 +508,16 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.icons-list-footer a {
-  color: var(--icons-color);
+.icons-list-footer li {
+  fill: var(--icons-color);
   background-color: var(--footer-icons-color);
 }
 
-.icons-list-footer a:hover {
+.icons-list-footer li:hover,
+.icons-list-footer li:focus {
   background-color: var(--accent-color);
 }
 .icon-footer {
@@ -541,11 +529,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  fill: currentColor;
+  fill: var(--white-color);
 }
 
-.icon-footer:hover {
+.icons-list-footer li:hover .icon-footer,
+.icons-list-footer li:focus .icon-footer {
   fill: var(--white-color);
   background-color: var(--accent-color);
 }
@@ -719,6 +707,8 @@ img {
 
 .modal {
   position: absolute;
+  width: 11px;
+  height: 11px;
 
   top: 50%;
   left: 50%;
